@@ -1,0 +1,334 @@
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--cream);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+::selection {
+  background: var(--wine);
+  color: var(--cream);
+}
+
+/* ---------- Layout ---------- */
+.container {
+  width: min(1240px, 92vw);
+  margin-inline: auto;
+}
+
+.section {
+  position: relative;
+  padding: clamp(4.5rem, 9vw, 8.5rem) 0;
+  overflow: hidden;
+}
+
+.section--cream {
+  background: var(--cream);
+}
+
+.section--wine {
+  background: var(--wine);
+  color: var(--cream);
+}
+
+.section--espresso {
+  background: var(--espresso);
+  color: var(--cream);
+}
+
+/* ---------- Typography helpers ---------- */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(2.2rem, 4.6vw, 3.7rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin-top: 1.05rem;
+}
+
+.section-title em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--wine);
+}
+
+.section-sub {
+  max-width: 580px;
+  color: var(--muted);
+  font-size: 1rem;
+  margin-top: 1.1rem;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.section-head {
+  max-width: 760px;
+  margin-bottom: clamp(2.6rem, 5vw, 4.4rem);
+}
+
+.section-head--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-head--left {
+  margin-inline: 0;
+  text-align: left;
+}
+
+.section-head--wine .eyebrow {
+  color: var(--gold-soft);
+}
+
+.section-head--wine .section-title {
+  color: var(--cream);
+}
+
+.section-head--wine .section-title em {
+  color: var(--gold-soft);
+}
+
+.section-head--wine .section-sub {
+  color: var(--cream-ink);
+}
+
+/* decorative short rule next to left-aligned headings */
+.side-line {
+  position: relative;
+  padding-left: 1.7em;
+}
+
+.side-line::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.46em;
+  width: 0.9em;
+  height: 1px;
+  background: var(--gold);
+}
+
+.section-head--wine .side-line::before {
+  background: var(--gold-soft);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7em;
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  padding: 1.05rem 2.1rem;
+  border: 1px solid transparent;
+  border-radius: 0;
+  white-space: nowrap;
+  transition:
+    background-color 0.4s var(--ease),
+    color 0.4s var(--ease),
+    border-color 0.4s var(--ease),
+    transform 0.4s var(--ease),
+    box-shadow 0.4s var(--ease);
+  will-change: transform;
+}
+
+.btn svg {
+  width: 1.05em;
+  height: 1.05em;
+  flex: none;
+  transition: transform 0.35s var(--ease);
+}
+
+.btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* gold primary CTA */
+.btn-gold {
+  background: var(--gold);
+  color: var(--espresso);
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-gold:hover {
+  background: var(--gold-soft);
+  color: var(--wine-4);
+  transform: translateY(-2px);
+  box-shadow: 0 22px 48px -18px rgba(201, 168, 106, 0.6);
+}
+
+/* wine dark CTA */
+.btn-dark {
+  background: var(--wine);
+  color: var(--cream);
+  box-shadow: 0 16px 34px -18px rgba(90, 24, 36, 0.6);
+}
+
+.btn-dark:hover {
+  background: var(--wine-3);
+  transform: translateY(-2px);
+  box-shadow: 0 22px 44px -18px rgba(90, 24, 36, 0.66);
+}
+
+/* outlined, for use on light backgrounds (dark text) */
+.btn-line {
+  border-color: var(--line-strong);
+  color: var(--text);
+  background: transparent;
+}
+
+.btn-line:hover {
+  border-color: var(--wine);
+  background: rgba(90, 24, 36, 0.05);
+  transform: translateY(-2px);
+}
+
+/* ghost, for use on dark/wine backgrounds (cream text) */
+.btn-ghost {
+  border-color: var(--line-light);
+  color: var(--cream);
+  background: transparent;
+}
+
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold-soft);
+  transform: translateY(-2px);
+}
+
+/* solid cream, for dark sections */
+.btn-light {
+  background: var(--cream);
+  color: var(--wine);
+}
+
+.btn-light:hover {
+  background: var(--gold-soft);
+  color: var(--wine-4);
+  transform: translateY(-2px);
+}
+
+.btn:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* ---------- Grain overlay for editorial texture ---------- */
+.grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.grain--gold {
+  opacity: 0.08;
+  mix-blend-mode: screen;
+}
+
+/* ---------- Decorative micro-animations (transform/opacity only) ---------- */
+.twinkle {
+  display: inline-block;
+  animation: twinkle 3.4s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.85) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12) rotate(20deg);
+  }
+}
+
+.float-y {
+  animation: float-y 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

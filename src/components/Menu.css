@@ -1,0 +1,224 @@
+.menu {
+  background: var(--cream);
+}
+
+/* ----- tabs ----- */
+.menu-tabs-scroll {
+  margin-bottom: clamp(2.2rem, 4vw, 3rem);
+}
+
+.menu-tabs {
+  display: flex;
+  gap: 0.35rem;
+  overflow-x: auto;
+  padding-bottom: 0.6rem;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.menu-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-tabs:has(.menu-tab.is-selected) .menu-tab:not(.is-selected) {
+  border-color: transparent;
+}
+
+.menu-tab {
+  position: relative;
+  flex: none;
+  padding: 0.72rem 1.35rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease);
+  white-space: nowrap;
+}
+
+.menu-tab:hover {
+  color: var(--wine);
+}
+
+.menu-tab.is-selected {
+  color: var(--wine);
+}
+
+.menu-tab-pill {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 1px solid var(--gold-line-strong);
+  background: linear-gradient(180deg, rgba(201, 168, 106, 0.14), rgba(201, 168, 106, 0.05));
+  z-index: 0;
+}
+
+.menu-tab-label {
+  position: relative;
+  z-index: 1;
+}
+
+/* ----- panel ----- */
+.menu-panel-wrap {
+  position: relative;
+}
+
+.menu-panel {
+  max-width: 780px;
+  margin-inline: auto;
+  padding: clamp(1.6rem, 3.5vw, 2.6rem) clamp(1.25rem, 3vw, 2.6rem);
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(246, 240, 230, 0.6), rgba(230, 217, 195, 0.35));
+  position: relative;
+}
+
+.menu-panel::before,
+.menu-panel::after {
+  content: '';
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  pointer-events: none;
+}
+
+.menu-panel::before {
+  top: -1px;
+  left: -1px;
+  border-top: 1px solid var(--gold);
+  border-left: 1px solid var(--gold);
+}
+
+.menu-panel::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 1px solid var(--gold);
+  border-right: 1px solid var(--gold);
+}
+
+.menu-panel-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 0.6rem;
+}
+
+.menu-panel-title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--wine);
+}
+
+.menu-panel-count {
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ----- rows ----- */
+.menu-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.78rem 0.15rem;
+  border-bottom: 1px dashed rgba(33, 23, 22, 0.12);
+  transition: background-color 0.25s var(--ease), padding 0.25s var(--ease);
+}
+
+.menu-row:hover {
+  background: rgba(201, 168, 106, 0.06);
+}
+
+.menu-row:last-child {
+  border-bottom: none;
+}
+
+.menu-name {
+  font-size: 1.02rem;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.menu-leader {
+  flex: 1;
+  border-bottom: 1px dotted var(--gold-deep);
+  opacity: 0.5;
+  min-width: 24px;
+  transform: translateY(-0.28em);
+}
+
+.menu-price {
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: var(--wine);
+  white-space: nowrap;
+}
+
+.menu-order {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0.34rem 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease), opacity 0.3s var(--ease);
+  opacity: 0;
+}
+
+.menu-row:hover .menu-order {
+  opacity: 1;
+}
+
+.menu-order:hover {
+  color: var(--gold-deep);
+  border-color: var(--gold-line);
+}
+
+/* ----- cta ----- */
+.menu-cta {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu-cta-label {
+  color: var(--muted);
+  font-weight: 300;
+}
+
+.menu-cta-note {
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+@media (max-width: 520px) {
+  .menu-order {
+    opacity: 1;
+  }
+
+  .menu-tabs {
+    margin-inline: -1.6rem;
+    padding-inline: 1.6rem;
+  }
+}

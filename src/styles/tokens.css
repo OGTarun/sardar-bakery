@@ -1,0 +1,44 @@
+:root {
+  /* ---- Sardar Bakery palette ---- */
+  --wine: #5a1824;
+  --wine-2: #47121c;
+  --wine-3: #6d1f2d;
+  --wine-4: #2e0b12;
+  --cream: #f6f0e6;
+  --cream-2: #eee4d3;
+  --cream-3: #e6d9c3;
+  --gold: #c9a86a;
+  --gold-soft: #dcbd8c;
+  --gold-deep: #ab884b;
+  --espresso: #211716;
+  --espresso-2: #2d201d;
+  --espresso-3: #171010;
+  --terra: #a95f4b;
+
+  --text: #2a1e1b;
+  --text-soft: #3d2f2b;
+  --muted: #7a6a60;
+  --cream-ink: rgba(246, 240, 230, 0.64);
+
+  --line: rgba(33, 23, 22, 0.13);
+  --line-strong: rgba(33, 23, 22, 0.28);
+  --line-light: rgba(246, 240, 230, 0.16);
+  --gold-line: rgba(201, 168, 106, 0.45);
+  --gold-line-strong: rgba(201, 168, 106, 0.72);
+
+  /* ---- Typography ---- */
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Jost', 'Segoe UI', system-ui, sans-serif;
+
+  /* ---- Elevation ---- */
+  --shadow-soft: 0 24px 60px -24px rgba(33, 23, 22, 0.26);
+  --shadow-lift: 0 38px 80px -30px rgba(33, 23, 22, 0.42);
+  --shadow-gold: 0 18px 40px -18px rgba(201, 168, 106, 0.5);
+
+  /* ---- Shape ---- */
+  --radius-lg: 22px;
+  --radius-md: 14px;
+  --radius-sm: 8px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}

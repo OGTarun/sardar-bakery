@@ -1,0 +1,33 @@
+.particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  bottom: -3vh;
+  border-radius: 50%;
+  animation: particle-rise var(--dur, 14s) linear infinite;
+  animation-delay: var(--delay, 0s);
+  will-change: transform, opacity;
+}
+
+@keyframes particle-rise {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0;
+  }
+  8% {
+    opacity: var(--po, 0.6);
+  }
+  55% {
+    transform: translate3d(var(--drift, 20px), -52vh, 0) scale(0.9);
+  }
+  100% {
+    transform: translate3d(calc(var(--drift, 20px) * -0.5), -112vh, 0) scale(0.72);
+    opacity: 0;
+  }
+}

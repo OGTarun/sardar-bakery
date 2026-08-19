@@ -1,0 +1,86 @@
+.trust {
+  background:
+    radial-gradient(900px 500px at 12% 0%, rgba(201, 168, 106, 0.1), transparent 60%),
+    linear-gradient(180deg, var(--cream-2), var(--cream));
+}
+
+.trust-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.trust-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.trust-est {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(4rem, 9vw, 7rem);
+  line-height: 1;
+  color: var(--wine);
+  letter-spacing: -0.02em;
+}
+
+.trust-brandline {
+  margin-top: 0.4rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+  color: var(--gold-deep);
+}
+
+.trust-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.trust-pillar {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 1.4rem;
+  background: rgba(246, 240, 230, 0.7);
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--gold);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.trust-pillar:hover {
+  transform: translateX(6px);
+  box-shadow: var(--shadow-soft);
+}
+
+.trust-pillar-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-line);
+  color: var(--wine);
+  flex: none;
+}
+
+.trust-pillar-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.trust-pillar-label {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--text);
+}
+
+@media (max-width: 860px) {
+  .trust-inner {
+    grid-template-columns: 1fr;
+  }
+}

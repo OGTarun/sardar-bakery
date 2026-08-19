@@ -269,6 +269,21 @@
   padding: 1rem 2rem;
 }
 
+@media (max-width: 520px) {
+  .nav-mobile-foot {
+    align-items: stretch;
+  }
+
+  .nav-mobile-call {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    gap: 0.55em;
+  }
+}
+
 .nav-mobile-facebook {
   display: inline-flex;
   align-items: center;
@@ -310,7 +325,59 @@
     display: block;
   }
 
-  .nav-call {
+  .nav-inner {
+    gap: 0.75rem;
+  }
+
+  .nav-logo {
+    min-width: 0;
+    flex: 0 1 auto;
+    gap: 0.55rem;
+  }
+
+  /* The full lockup already contains the brand name — drop the duplicate
+     wordmark text on small screens so the logo never collides with the
+     Call Now / menu controls. */
+  .nav-logo-text {
     display: none;
+  }
+
+  .nav-logo .logo {
+    max-width: min(34vw, 130px);
+  }
+
+  .nav-actions {
+    flex: none;
+    gap: 0.55rem;
+  }
+
+  /* Mobile Call Now — compact, never overlapping the logo. Higher
+     specificity than .btn (which ships in global.css after this file) so it
+     always wins the cascade regardless of stylesheet order. */
+  .nav-actions .nav-call {
+    display: inline-flex;
+    padding: 0.85rem 0.95rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    gap: 0.5em;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-inner {
+    gap: 0.5rem;
+  }
+
+  .nav-actions {
+    gap: 0.45rem;
+  }
+
+  .nav-actions .nav-call {
+    padding: 0.7rem 0.75rem;
+    font-size: 0.58rem;
+  }
+
+  .nav-logo .logo {
+    max-width: 30vw;
   }
 }
